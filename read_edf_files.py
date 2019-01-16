@@ -5,8 +5,12 @@ path = '/home/ticsocial/Descargas/'
 """def is_edf_file(file_name):
     return file_name[len(file_name)-3:len(file_name)] == "edf"
 """
+# revisa si es un canal valido
+match_regex = lambda channel_name : re.compile(r'(P|F|O|T)').search(channel_name)
 
+# valida la extension del fichero
 is_edf_file = lambda file_name : file_name[len(file_name)-3:len(file_name)] == "edf"
+
 
 def calc_auto(path):
     # Encontrar los archivos edf dentro del directorio
