@@ -2,8 +2,11 @@ import os
 path = '/home/ticsocial/Descargas/'
 
 # valida la extensión del fichero
-def is_edf_file(file_name):
+"""def is_edf_file(file_name):
     return file_name[len(file_name)-3:len(file_name)] == "edf"
+"""
+
+is_edf_file = lambda file_name : file_name[len(file_name)-3:len(file_name)] == "edf"
 
 def calc_auto(path):
     # Encontrar los archivos edf dentro del directorio
