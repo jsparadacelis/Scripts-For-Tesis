@@ -3,7 +3,7 @@ import mne
 import matplotlib.pyplot as plt
 import numpy as np
 datos_edf = mne.io.read_raw_edf(
-        "00000558_s003_t000.edf", 
+        "00010311_s001_t000.edf", 
         preload=True, 
         stim_channel=None
 )
@@ -39,7 +39,9 @@ for channel in list_channels:
         "tetha" : np.mean(channel_f[get_index(4):get_index(8)]),
         "alpha" : np.mean(channel_f[get_index(8):get_index(13)]),
         "beta" : np.mean(channel_f[get_index(13):get_index(30)]),
+        "class" : 1
     }
+    band_width = [v*10 if k!='class' else v for k,v in band_width.items()]
     freq_bands_list.append(band_width)
     
 print(freq_bands_list)
