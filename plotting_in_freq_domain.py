@@ -3,7 +3,7 @@ import mne
 import matplotlib.pyplot as plt
 import numpy as np
 datos_edf = mne.io.read_raw_edf(
-        "00010311_s001_t000.edf", 
+        "/home/sebastian/Descargas/tesis/00000355_s003_t000.edf.edf", 
         preload=True, 
         stim_channel=None
 )
